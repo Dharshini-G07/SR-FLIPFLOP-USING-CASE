@@ -50,28 +50,26 @@ Developed by: PRIYADHARSHINI G
 RegisterNumber:212224230209
 */
 ```
-module exp6(S,R,clk,Q,Qbar);
-input S,R,clk;
-output reg Q;
-output reg Qbar;
-initial Q=0;
-initial Qbar=1;
-always @(posedge clk)
-begin
-Q=S|((~R)&Q);
-Qbar=~Q;
-end
-endmodule
+module rflipflop(s,r,clk,q,qbar);
+input s,r,clk;
+output q,qbar;
+wire w1,w2;
+nand(w1,s,clk);
+nand(w2,r,clk);
+nand(q,w1,qbar);
+nand(qbar,q,w2);
+endmodule 
 ```
 
 **RTL LOGIC FOR FLIPFLOPS**
+![image](https://github.com/user-attachments/assets/8a9af037-00c9-4a07-856f-24fbdb56ff0e)
 
-![image](https://github.com/user-attachments/assets/50315278-97f9-42ab-8e48-b0e95610899c)
+
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![image](https://github.com/user-attachments/assets/71508fce-da07-421f-a43a-b34e2ed9638b)
 
-![image](https://github.com/user-attachments/assets/d17def36-5ae6-4f72-b550-e1aa3e023c24)
 
 
 **RESULTS**
